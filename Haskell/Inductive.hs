@@ -1,3 +1,8 @@
+module Main (main) where
+
+import qualified Data.Text as T
+
+
 data Variable = Variable String
   deriving (Show, Eq)
 
