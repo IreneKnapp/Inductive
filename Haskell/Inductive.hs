@@ -3,7 +3,8 @@ module Main (main) where
 import Data.Text
 
 
-data Proposition = Predicate Text Variable
+data Proposition = Proposition Predicate [Variable]
+data Predicate = Predicate Text | DiscoveredPredicate Int
 data Variable = Variable Text
 data Polar = Positive Proposition | Negative Proposition
 data Conjunction = T | Polar :&: Conjunction
