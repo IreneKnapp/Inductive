@@ -1,13 +1,15 @@
 module Main (main) where
 
-{-
-data Prop = ...
-data Polar = Pos Prop | Neg Prop
-data Conj = T | Polar :&: Conj
-data Disj = F | Conj :|: Disj
-data Quant = Forall Var | Exists Var
-data Prenex = Prenex (List Quant) Disj
--}
+import Data.Text
+
+
+data Proposition = Predicate Text Variable
+data Variable = Variable Text
+data Polar = Positive Proposition | Negative Proposition
+data Conjunction = T | Polar :&: Conjunction
+data Disjunction = F | Conjunction :|: Disjunction
+data Quantification = Forall Variable | Exists Variable
+data Prenex = Prenex [Quantification] Disjunction
 
 
 main :: IO ()
